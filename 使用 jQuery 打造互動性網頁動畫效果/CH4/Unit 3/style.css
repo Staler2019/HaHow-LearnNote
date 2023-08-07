@@ -1,0 +1,11 @@
+.text {
+    /* display: none; */
+    opacity: 0; /* 物件仍存在觀賞頁面上喔 */
+    transition: all 3s;
+}
+
+/* 在.text裡面的.active部分 */
+.text.active {
+    /* display: block; */
+    opacity: 1;
+}
