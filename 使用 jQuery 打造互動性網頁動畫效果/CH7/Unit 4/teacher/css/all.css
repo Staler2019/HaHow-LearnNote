@@ -1,0 +1,17 @@
+.list a{
+  text-decoration: none;
+  color: red;
+}
+.list a:hover{
+
+  color: #434343;
+}
+.list a:before{ /* 在左元素前(左邊)推移一些空間 */
+  margin-right: 15px;
+
+}
+.list li{
+  margin-bottom: 20px;
+  font-size: 99px;
+
+}
