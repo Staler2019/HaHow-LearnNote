@@ -27,7 +27,12 @@
         height: 100px;
         background-color: #7952b3;
         border: 1px solid white;
-        color:white;
+        color: white;
+      }
+      .box-auto {
+        border: 1px solid white;
+        background-color: #7952b3;
+        color: white
       }
 
       /* DOM 實際大小 width/height + padding + border 如此向外擴張 (不含margin) */
@@ -36,84 +41,39 @@
     </style>
   </head>
   <body>
-    <!-- flex
-      1. 軸線: 垂直 & 水平
-      2. 外層屬性 & 內層屬性
-      3. 對其方法
-      4. 加上 bootstrap 使用
-    -->
-
-    <!-- 一、軸線 -->
-    <!-- 主軸預設左至右 -->
-    <!-- justify-content
-      1. 對齊起點
-      2. 對齊終點
-      3. 等距排列
-    -->
-    <!-- 交錯軸預設上到下 -->
-    <!-- align-items
-      1. 起點
-      2. 終點
-      3. 置中
-    -->
-    <!-- flex-direction 可以更換主軸及方向 -->
-
-    <!-- 二、常見屬性 -->
-    <!--
-      display
-      flex-direction:決定 flex 軸線
-      justify-content:主要軸線的對齊
-      align-items:交錯軸線的對齊
-      align-self:單一物件的交錯軸對齊
-    -->
-    <!-- flex-direction
-    1. row
-    2. row-inverse
-    3. column
-    4. column-inverse
-    -->
-    <!-- justify-content
-    1. flex-start:主軸起點
-    2. center:主軸中間
-    3. space around:物體間與邊距空白
-    4. flex-end:主軸終點
-    5. space between:物體間空白
-    -->
-    <!-- align-items
-    1. flex-start:交錯軸起點
-    2. center:交錯軸中間
-    3. stretch:交錯軸填滿
-    4. flex-end:交錯軸終點
-    5. baseline:以上方文字基準線對齊主軸\
-      -->
-
     <div class="container mt-3">
-      <!-- <div class="row flex-row-reverse"> -->
-      <div class="row justify-content-between">
-        <div class="col-3">
+      <!-- order -->
+      <div class="row">
+        <div class="col-3 order-2">
           <div class="box">1</div>
         </div>
-        <div class="col-3">
+        <div class="col-3 order-1">
           <div class="box">2</div>
         </div>
       </div>
+      <!-- order: sm 尺寸以上有效 -->
+      <div class="row">
+        <div class="col-sm-3 order-sm-1">
+          <div class="box">1</div>
+        </div>
+        <div class="col-sm-3 order-sm-3">
+          <div class="box">2</div>
+        </div>
+        <div class="col-sm-6 order-sm-2">
+          <div class="box">3</div>
+        </div>
+      </div>
+      <hr />
 
-      <div class="row flex-column align-items-center">
-        <div class="col-6 align-self-start">
-          <div class="box"></div>
-        </div>
-        <div class="col-6">
-          <div class="box"></div>
-        </div>
-        <div class="col-6 align-self-end">
-          <div class="box"></div>
-        </div>
-        <div class="col-6">
-          <div class="box"></div>
-        </div>
-        <div class="col-6 align-self-start">
-          <div class="box "></div>
-        </div>
+      <!-- 預設是 flex-nowarp 不會自動換行 -->
+      <!-- align-content-center 對齊中置，目前練習中此屬性跟沒作用一樣 -->
+      <div class="d-flex flex-wrap align-content-center bg-secondary">
+        <div class="col-sm-3 box-auto">1</div>
+        <div class="col-sm-3 box-auto">2</div>
+        <div class="col-sm-3 box-auto">3</div>
+        <div class="col-sm-3 box-auto">4</div>
+        <div class="col-sm-3 box-auto">5</div>
+        <div class="col-sm-3 box-auto">6</div>
       </div>
     </div>
 
